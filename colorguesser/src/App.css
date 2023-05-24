@@ -10,8 +10,19 @@ body, html, .root{
   height: 100%;
 }
 
-.color-square {
+.guess-color-square {
   height: 250px;
   width: 250px;
-  justify-content: center;
+}
+
+button{
+  padding: 8px;
+  font-size: 15px;
+}
+
+.correct{
+  color: green;
+}
+.incorrect{
+  color: red;
 }

@@ -2,16 +2,31 @@
   text-align: center;
   display: grid;
   align-items: center;
+  background-image: url("./images/sunset-bg.jpg");
+  height: 100vh;
+  background-position: center; /* center bg image */
+  background-size: cover; /* set bg image to screen size responsively */
+  background-repeat: no-repeat;
+}
+body, ul{
+  margin: 0;
+  padding: 0;
 }
 .container{
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  background-color: rgb(198, 198, 255, 0.4);
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 5px;
+  column-gap: 24px; /* currently controlling space between cards, change this */
+}
+.root{
+  background-image: url("./images/sunset-bg.jpg");
 }
 
 .main-weather-img{
-  width: 50%;
+  max-width: 50%;
+  max-height: 50%;
 }
 .main-weather-info{
   width: 50%;
@@ -20,15 +35,19 @@
 .weather-forecast-card{
   height: 150px;
   width: 150px;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: left;
-  overflow: hidden;
-  background-color: blue;
-  border: 1px solid;
-  border-radius: 2px;
+  font-size: 16px;
+  background-color: rgb(143, 143, 202, 0.5);
+  border-radius: 4px;
 }
 
 .weather-card-img{
   max-height: 40%;
   max-width: 40%;
+}
+
+.main-input{
+  border: 2px black;
+  border-radius: 4px;
 }

@@ -1,6 +1,8 @@
 import axios from "axios"
 import { useRef, useState } from 'react'
-import sunIcon from './images/sun.png'
+import MainWeather from './Components/MainWeather'
+import SmallWeather from './Components/SmallWeather'
+
 
 function App() {
 
@@ -14,6 +16,7 @@ function App() {
 
   const weatherstackkey = "60b7c3e15b9b09362af4d2d30b0a107e"
   const url = `http://api.weatherstack.com/current?access_key=${weatherstackkey}&query=${location}`
+  const urlTwo = 'https://jsonplaceholder.typicode.com/users/1'
 
   function addDays(date, daysToAdd){
     var result = new Date(date)
@@ -25,46 +28,24 @@ function App() {
     return ((date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear())
   }
 
-  const handleRequest = () => {
+  const getWeatherData = async (city, e) => {
+    e.preventDefault()
      //Get current input value
     setLocation(inputRef.current.value)
 
     //setTomorrow(addDays(currentDate), 1)
-
+    console.log(currentDate)
     axios.get(url)
     .then((response) => {
       console.log(response)
+      //setTemperature(response.data.current.temperature)
     })
     .catch((error) => console.log(error))
   }
 
   return (
     <div className="App">
-      <div>
-        <input 
-          type="text" 
-          placeholder="Please enter a city"
-          ref={inputRef}
-        />
-        <button onClick={handleRequest}>Search</button>
-      </div>
-      <div className='container'>
-        <div className='main-weather-img'>
-          <image >Placeholder for image</image>
-        </div>
-        <div className='main-weather-info'>
-          <h1>Current weather in {location}</h1>
-          <h3>Temperature: {temperature} &deg;C </h3>
-          <h3>Clear sky? {weatherConditions}</h3>
-        </div>
-      </div>
-      <div className='container'>
-        <div classname='weather-forecast-card'>
-          <h2>{tomorrow}</h2>
-          <img src={sunIcon} className='weather-card-img'/>
-          <h3>{tomorrowTemperature} &deg;C </h3>
-        </div>
-      </div>
+      <MainWeather />
     </div>
   );
 }
