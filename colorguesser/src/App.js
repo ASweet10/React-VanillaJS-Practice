@@ -1,7 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react'
 
-
 function App() {
   const colorArray = ['#FFFF84', '#80FFFF', '#0FFFF4']
   const [color, setColor] = useState("#01FF84")
