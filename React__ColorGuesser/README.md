@@ -1,3 +1,3 @@
 # React Practice Project 3
 # Color Guesser Interview Assignment
-![Screenshot](/colorguesser.png)
+![Screenshot](/React__ColorGuesser/colorguesser.png)
