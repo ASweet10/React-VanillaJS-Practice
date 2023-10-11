@@ -1,1 +1,1 @@
-# React-Practice
+# React & Vanilla JavaScript practice projects
