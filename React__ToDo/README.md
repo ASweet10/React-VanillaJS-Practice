@@ -1,3 +1,3 @@
 # React Practice Project 
 # To-Do List
-![Screenshot](/React-Todo.png)
+![Screenshot](/React__ToDo/React-Todo.png)
